@@ -1,0 +1,80 @@
+:root {
+  --clipboard-icon-color: rgb(20, 110, 190);
+  --success-message-color: #69dd47;
+  --success-div-color: #def7d6;
+  --refresh-icon-color: #f81794;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
+
+.generator {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.copy:hover {
+  color: var(--clipboard-icon-color);
+}
+
+.main {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card {
+  margin: 0 auto;
+}
+
+.margin-auto {
+  margin: 0 auto 20px;
+}
+.success {
+  width: 20vw;
+  height: 10vh;
+  border-radius: 7px;
+  border: 1px solid green;
+  background-color: var(--success-div-color);
+}
+
+.success .success-message {
+  color: green;
+}
+
+.show {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+}
+
+.hide {
+  display: none;
+}
+
+.refreshIcon {
+  position: absolute;
+  left: 360px;
+  top: 10px;
+  font-size: 30px;
+}
+
+.refreshIcon:hover {
+  color: var(--refresh-icon-color);
+}

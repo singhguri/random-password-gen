@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Password Gen</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Random Password Generator</h1>
+        </div>
+        <div class="generator">
+            <div class="success center margin-auto hide">
+                <div class="success-message">
+                    Password copied successfully.
+                </div>
+            </div>
+            <div class="main">
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <div class="card-title">
+
+                            <form class="form-group" onchange="genPassword();">
+                                <!-- Password field -->
+                                <div class="input-group mb-3" style="width: auto;">
+                                    <input type="text" disabled class="form-control" aria-label="Password"
+                                        id="passwordText" aria-describedby="basic-addon1" />
+                                    <!-- copy icon -->
+                                    <div class="mx-4 clickable" title="Copy Password" onclick="copyToClipboard()">
+                                        <i class="fa-regular fa-copy copy" id="copyIcon" style="font-size: 50px;"></i>
+                                    </div>
+                                </div>
+
+                                <!-- length range -->
+                                <div class="input-group mb-3" style="width: 18rem;">
+                                    <input type="range" class="form-range" min="8" max="16" id="passwordLen"
+                                        onchange="handlePasswordLenOnchange();">
+                                    <p><span id="passwordLenVal"></span> Characters</p>
+                                    <div class="refreshIcon clickable" title="Refresh" onclick="genPassword();">
+                                        <i class="fa-solid fa-arrows-rotate"></i>
+                                    </div>
+                                </div>
+
+                                <!-- password security checks -->
+                                <div class="form-group">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="symbols" name="symbols"
+                                            value="no" checked>
+                                        <label class="form-check-label" for="symbols">Include Symbols (@#$%)</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="numbers" name="numbers"
+                                            value="no" checked>
+                                        <label class="form-check-label" for="numbers">Include Numbers (1234)</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="lowerChar" name="lowerChar"
+                                            value="no" checked>
+                                        <label class="form-check-label" for="lowerChar">Include LowerCase Characters
+                                            (abc)</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="upperChar" name="upperChar"
+                                            value="no" checked>
+                                        <label class="form-check-label" for="upperChar">Include UpperCase Characters
+                                            (ABC)</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- import script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
